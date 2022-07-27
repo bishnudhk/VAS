@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
+import { loginContext,loginInterface } from '../context/AuthContext';
 
 import './login.css';
+import { useNavigate } from 'react-router-dom';
 
 const Login :React.FC = () => {
+  const {isLoggedIn,setIsLoggedIn} = useContext(loginContext) as loginInterface;
+  const navigate = useNavigate();
+  console.log(isLoggedIn); 
     const onFinish = (values: string | number) => {
         console.log('Success:', values);
+        setIsLoggedIn(true);
+        navigate('/');
+
       };
     
       const onFinishFailed = (errorInfo: any) => {
@@ -26,10 +34,10 @@ const Login :React.FC = () => {
           <Form.Item
             label="Username"
             name="username"
-            className='username'
+            className='user-name'
             rules={[{ required: true, message: 'Please input your username!' }]}
           >
-            <Input />
+            <Input className='userInput' />
           </Form.Item>
     
           <Form.Item

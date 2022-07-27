@@ -1,14 +1,24 @@
 .login{
     display: flex;
     flex-direction: column;
+    
+    /* margin-top: 32px; */
+    height: 100vh; 
+    background-color: gray;
+    /* width: 40%; */
+    /* height: 63%; */
     align-items: center;
     justify-content: center;
-    margin-top: 32px;
-    height: 100vh;
 }
-.username {
-    font-size: 23px;
+
+user-name label{
+    font-size: 43px ;
+    color: green ;  
+    
+}
+.userInput{
+    border-radius: 5px;
 }
 .password {
-    font-size: 23px;
-}
+    /* font-size: 23px; */
+} 
