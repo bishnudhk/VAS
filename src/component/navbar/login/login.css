@@ -11,13 +11,13 @@
     justify-content: center;
 }
 
-user-name label{
-    font-size: 43px ;
+.user-name {
+    font-size: 143px !important ;
     color: green ;  
     
 }
 .userInput{
-    border-radius: 5px;
+    border-radius:155px !important;
 }
 .password {
     /* font-size: 23px; */

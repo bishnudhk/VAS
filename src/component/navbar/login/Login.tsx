@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Button, Checkbox, Form, Input } from 'antd';
-import { loginContext,loginInterface } from '../context/AuthContext';
+import { loginContext,loginInterface } from '../../context/AuthContext';
 
 import './login.css';
 import { useNavigate } from 'react-router-dom';
@@ -10,8 +10,9 @@ const Login :React.FC = () => {
   const navigate = useNavigate();
   console.log(isLoggedIn); 
     const onFinish = (values: string | number) => {
-        console.log('Success:', values);
+        console.log('Success:', values);  
         setIsLoggedIn(true);
+        localStorage.setItem("isLoggedIn","true" );
         navigate('/');
 
       };
@@ -35,6 +36,7 @@ const Login :React.FC = () => {
             label="Username"
             name="username"
             className='user-name'
+            
             rules={[{ required: true, message: 'Please input your username!' }]}
           >
             <Input className='userInput' />
