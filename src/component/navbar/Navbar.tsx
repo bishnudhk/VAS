@@ -1,15 +1,28 @@
+import { Button } from 'antd'
 import React from 'react'
-import { Link } from 'react-router-dom';
-import './navbar.css'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux";
+import { logoutAction } from "../../storeRedux/slice/AuthSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigate()
+  const handleLogout=()=>{
+    dispatch(logoutAction());
+  localStorage.setItem("isLoggedIn",JSON.stringify(false))
+  navigation({pathname:"/login"});
+  }
   return (
     <div className='navbar'>
-      <li><Link to = '/'>Home</Link> </li>
-    <li><Link to= '/about' >About</Link></li>
-    <li><Link to='/contact'>Contact</Link></li>
-    
-    <li><Link to='logout'>Logout</Link></li>
+   <div className='navLink'>
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/about">About</NavLink>
+    <NavLink to="/patient">Patient</NavLink>
+   </div>
+   {/* <div className='logoutBtn'> */}
+  <Button className='logoutBtn' 
+  onClick={handleLogout}>Logout</Button>
+   {/* </div> */}
     </div>
   )
 }
