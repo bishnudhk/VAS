@@ -5,8 +5,8 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../storeRedux/sliceInterface/Store";
-import { loginAction } from "../../../storeRedux/slice/AuthSlice";
+import { RootState } from "../../storeRedux/sliceInterface/Store";
+import { loginAction } from "../../storeRedux/slice/AuthSlice";
 
 const Login = () => {
   const dispatch = useDispatch();

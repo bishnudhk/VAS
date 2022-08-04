@@ -4,9 +4,12 @@ import { useDispatch } from "react-redux";
 import { PlusOutlined } from "@ant-design/icons";
 import { addPatientDetails } from "../../storeRedux/slice/PatientRecord";
 
-const PatientForm = () => {
+const PatientForm:React.FC = () => {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
+  
+
+  
   const onFinish = (values: any) => {
     const formatedData = {
       firstName: values.firstname,
@@ -32,6 +35,7 @@ const PatientForm = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log("Failed:", errorInfo);
   };
+  
   return (
     <div>
       <Form
@@ -152,10 +156,10 @@ const PatientForm = () => {
           wrapperCol={{ offset: 5, span: 16 }}
           rules={[{ required: true, message: "Confirmation Required" }]}
         >
-          <Checkbox>All the information I entered is true</Checkbox>
+          <Checkbox  >All the information I entered is true</Checkbox>
         </Form.Item>
         <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" >
             Submit
           </Button>
         </Form.Item>

@@ -4,9 +4,10 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { logoutAction } from "../../storeRedux/slice/AuthSlice";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const dispatch = useDispatch();
   const navigation = useNavigate()
+
   const handleLogout=()=>{
     dispatch(logoutAction());
   localStorage.setItem("isLoggedIn",JSON.stringify(false))
@@ -18,6 +19,7 @@ const Navbar = () => {
     <NavLink to="/">Home</NavLink>
     <NavLink to="/about">About</NavLink>
     <NavLink to="/patient">Patient</NavLink>
+    <NavLink to="/vaccineAppointed">Vaccine Appointed</NavLink>
    </div>
    {/* <div className='logoutBtn'> */}
   <Button className='logoutBtn' 
