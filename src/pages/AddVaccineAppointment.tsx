@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from '../component/navbar/Navbar'
-import VaccineAppointmentForm from '../component/vaccineAppointedForm/VaccineAppointmentForm'
-
+import AddVaccineAppointmentForm from '../component/vaccineAppointForm/AddVaccineAppointmentForm'
 
 const AddVaccineAppointment = () => {
   return (
     <div>
         <Navbar/>
-        <VaccineAppointmentForm/>
+      <AddVaccineAppointmentForm/>
     </div>
   )
 }

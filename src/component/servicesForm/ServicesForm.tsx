@@ -7,7 +7,7 @@ import moment from 'moment';
 const { RangePicker } = DatePicker;
 const { Option } = Select;
 
-const VaccineAppointmentForm = () => {
+const ServicesForm = () => {
 
     const onFinish = (values: any) => {
         console.log('Success:', values);
@@ -96,7 +96,7 @@ const VaccineAppointmentForm = () => {
       
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Add Vacine Appointment
+          Add Services
         </Button>
       </Form.Item>
     </Form>
@@ -104,4 +104,4 @@ const VaccineAppointmentForm = () => {
   )
 }
 
-export default VaccineAppointmentForm
+export default ServicesForm

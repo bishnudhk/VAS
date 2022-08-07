@@ -1,5 +1,5 @@
 
-import React, { useContext } from "react";
+
 import { Button, Checkbox, Form, Input } from "antd";
 // import {loginContext,loginInterface} from "../../../services/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../storeRedux/sliceInterface/Store";
 import { loginAction } from "../../storeRedux/slice/AuthSlice";
+import './login.css'
 
 const Login = () => {
   const dispatch = useDispatch();
     const navigate = useNavigate();
-  // const username = useSelector((state:RootState) => state.userInfo.username)
   
   // what should be want to return define here
  const isLoggedIn = useSelector((state: RootState) => state.isLoggedIn.isAuth)
@@ -28,15 +28,16 @@ const Login = () => {
     console.log("Failed:", errorInfo);
   };
   return (
+    <div className="login">
     <Form
       name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
+      // labelCol={{ span: 8 }}
+      // wrapperCol={{ span: 16 }}
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="off"
-      className="login"
+      className=""
     >
       <Form.Item
         label="Username"
@@ -59,17 +60,18 @@ const Login = () => {
       <Form.Item
         name="remember"
         valuePropName="checked"
-        wrapperCol={{ offset: 8, span: 16 }}
+        // wrapperCol={{ offset: 8, span:16 }}
       >
         <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Button type="primary" htmlType="submit">
-          Submit
+          Login
         </Button>
       </Form.Item>
     </Form>
+    </div>
   )
 }
 
